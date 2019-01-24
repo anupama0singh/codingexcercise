@@ -1,4 +1,5 @@
 package xeroLogin.xeroLogin;
+
 /** Test case to login to xero and add ANZ NZ in the orgnization
  * @param author = Anupama
  */
@@ -8,7 +9,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -40,15 +40,14 @@ public class LoginTest {
 		securityquestions = new SecurityQuestionPage(driver);
 		answerspage = new AnswersPage(driver);
 		dashboard = new DashBoard(driver);
-		addaccount= new AddAccount(driver);
+		addaccount = new AddAccount(driver);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 	}
 
 	@Test
-	@Parameters({"emailiD","password"})
-	@DataProvider
-	public void loginMainPage(String emailiD, String password) {
+	@Parameters({ "emailiD", "password", "accountName", "ccNumber" })
+	public void loginMainPage(String emailiD, String password, String acountName, String CCNumber) {
 		driver.get(baseUrl);
 		loginPage.enterEmail(emailiD);
 		loginPage.enterPassword(password);
@@ -57,12 +56,18 @@ public class LoginTest {
 		securityquestions.clickonsecurityQuestions();
 		answerspage.securityAnswers();
 		dashboard.clickonAddAccount();
-		addaccount.searchAccount();
+		addaccount.searchAccount(acountName);
+		addaccount.addAccountAnyway();
+		addaccount.selectANZ();
+		addaccount.selectAccountName(acountName);
+		addaccount.selectAccountType();
+		addaccount.selectCCNumber(CCNumber);
+		// addaccount.saveAccount();
 	}
 
 	@AfterTest
 	public void tearDown() throws Exception {
-		//driver.quit();
+		driver.quit();
 	}
 
 }
