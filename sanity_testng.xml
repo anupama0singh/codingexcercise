@@ -3,9 +3,12 @@
 <suite name="Sanity">
   <parameter name = "emailiD" value ="singh.anupama.r@gmail.com" />
   <parameter name= "password" value="Welcome@12"/>
+  <parameter name= "password" value="Welcome@12"/>
+  <parameter name= "accountName" value="ANZ (NZ)"/>
+  <parameter name= "ccNumber" value="12345"/>
   <test thread-count="5" name="xeroLogin">
     <classes>
-      <class name="xeroLogin.xeroLogin.Login"/>
+      <class name="xeroLogin.xeroLogin.LoginTest"/>
     </classes>
   </test> 
 </suite> 
