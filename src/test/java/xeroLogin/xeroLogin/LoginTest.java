@@ -48,10 +48,10 @@ public class LoginTest {
 	@Test
 	@Parameters({"emailiD","password"})
 	@DataProvider
-	public void loginMainPage() {
+	public void loginMainPage(String emailiD, String password) {
 		driver.get(baseUrl);
-		loginPage.enterEmail();
-		loginPage.enterPassword();
+		loginPage.enterEmail(emailiD);
+		loginPage.enterPassword(password);
 		loginPage.clickonLoing();
 		alternateloging.clickonAlternateMethod();
 		securityquestions.clickonsecurityQuestions();
