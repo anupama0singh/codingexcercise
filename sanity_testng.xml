@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Sanity">
+  <parameter name = "emailiD" value ="singh.anupama.r@gmail.com" />
+  <parameter name= "password" value="Welcome@12"/>
+  <test thread-count="5" name="xeroLogin">
+    <classes>
+      <class name="xeroLogin.xeroLogin.Login"/>
+    </classes>
+  </test> 
+</suite> 

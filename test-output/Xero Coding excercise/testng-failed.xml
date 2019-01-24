@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Xero Coding excercise]">
+  <test name="Login To Xero(failed)">
+    <classes>
+      <class name="xeroLogin.xeroLogin.Login">
+        <methods>
+          <include name="tearDown"/>
+          <include name="alternateLogin"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- xeroLogin.xeroLogin.Login -->
+    </classes>
+  </test> <!-- Login To Xero(failed) -->
+</suite> <!-- Failed suite [Xero Coding excercise] -->
